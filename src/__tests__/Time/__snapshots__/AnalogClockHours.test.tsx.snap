@@ -689,12 +689,14 @@ exports[`renders AnalogClockHours 1`] = `
                 "letterSpacing": 0.15,
                 "lineHeight": 24,
               },
-              null,
+              {
+                "color": "rgba(255, 255, 255, 1)",
+              },
             ],
           ]
         }
       >
-        00
+        12
       </Text>
     </View>
   </View>,
@@ -714,8 +716,8 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 160,
-          "top": 73,
+          "left": 165,
+          "top": 65,
         },
       ]
     }
@@ -774,8 +776,8 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 183,
-          "top": 96,
+          "left": 191,
+          "top": 91,
         },
       ]
     }
@@ -834,7 +836,7 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 192,
+          "left": 201,
           "top": 128,
         },
       ]
@@ -894,8 +896,8 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 183,
-          "top": 160,
+          "left": 191,
+          "top": 165,
         },
       ]
     }
@@ -954,8 +956,8 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 160,
-          "top": 183,
+          "left": 165,
+          "top": 191,
         },
       ]
     }
@@ -1015,7 +1017,7 @@ exports[`renders AnalogClockHours 1`] = `
         },
         {
           "left": 128,
-          "top": 192,
+          "top": 201,
         },
       ]
     }
@@ -1074,8 +1076,8 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 96,
-          "top": 183,
+          "left": 91,
+          "top": 191,
         },
       ]
     }
@@ -1134,8 +1136,8 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 73,
-          "top": 160,
+          "left": 65,
+          "top": 165,
         },
       ]
     }
@@ -1194,7 +1196,7 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 64,
+          "left": 55,
           "top": 128,
         },
       ]
@@ -1254,8 +1256,8 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 73,
-          "top": 96,
+          "left": 65,
+          "top": 91,
         },
       ]
     }
@@ -1314,8 +1316,8 @@ exports[`renders AnalogClockHours 1`] = `
           "zIndex": 20,
         },
         {
-          "left": 96,
-          "top": 73,
+          "left": 91,
+          "top": 65,
         },
       ]
     }
@@ -1375,7 +1377,7 @@ exports[`renders AnalogClockHours 1`] = `
         },
         {
           "left": 128,
-          "top": 64,
+          "top": 55,
         },
       ]
     }
@@ -1408,15 +1410,13 @@ exports[`renders AnalogClockHours 1`] = `
                 "lineHeight": 24,
               },
               [
-                {
-                  "color": "rgba(255, 255, 255, 1)",
-                },
+                null,
               ],
             ],
           ]
         }
       >
-        12
+        24
       </Text>
     </View>
   </View>,

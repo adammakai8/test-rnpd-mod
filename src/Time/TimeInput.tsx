@@ -37,7 +37,7 @@ function TimeInput(
     onPress,
     onChanged,
     inputType,
-    inputFontSize = 57,
+    inputFontSize = 48,
     ...rest
   }: TimeInputProps,
   ref: any
@@ -84,13 +84,16 @@ function TimeInput(
               : (theme as any as MD2Theme).fonts.medium.fontFamily,
             fontSize: inputFontSize,
             backgroundColor,
-            borderRadius: theme.roundness * 2,
+            borderRadius: theme.roundness * 3,
             borderColor:
               theme.isV3 && highlighted
                 ? theme.colors.onPrimaryContainer
                 : undefined,
             borderWidth: theme.isV3 && highlighted ? 2 : 0,
-            height: inputType === inputTypes.keyboard ? 72 : 80,
+            paddingTop: 6,
+            paddingBottom: 12,
+            marginTop: 5,
+            width: 116
           },
         ]}
         maxFontSizeMultiplier={1.5}
@@ -131,12 +134,12 @@ const styles = StyleSheet.create({
   input: {
     textAlign: 'center',
     textAlignVertical: 'center',
-    width: 96,
+    marginHorizontal: 'auto'
   },
   root: {
-    height: 80,
+    height: 100,
     position: 'relative',
-    width: 96,
+    width: 150,
   },
 })
 

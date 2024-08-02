@@ -30,9 +30,9 @@ exports[`renders TimePicker 1`] = `
       <View
         style={
           {
-            "height": 80,
+            "height": 100,
             "position": "relative",
-            "width": 96,
+            "width": 150,
           }
         }
       >
@@ -52,19 +52,22 @@ exports[`renders TimePicker 1`] = `
           style={
             [
               {
+                "marginHorizontal": "auto",
                 "textAlign": "center",
                 "textAlignVertical": "center",
-                "width": 96,
               },
               {
                 "backgroundColor": "rgba(231, 224, 236, 1)",
                 "borderColor": undefined,
-                "borderRadius": 8,
+                "borderRadius": 12,
                 "borderWidth": 0,
                 "color": "rgba(28, 27, 31, 1)",
                 "fontFamily": "System",
-                "fontSize": 57,
-                "height": 72,
+                "fontSize": 48,
+                "marginTop": 5,
+                "paddingBottom": 12,
+                "paddingTop": 6,
+                "width": 116,
               },
             ]
           }
@@ -104,7 +107,7 @@ exports[`renders TimePicker 1`] = `
           {
             "alignItems": "center",
             "fontSize": 65,
-            "width": 24,
+            "width": 0,
           },
           {
             "marginBottom": 24,
@@ -172,9 +175,9 @@ exports[`renders TimePicker 1`] = `
       <View
         style={
           {
-            "height": 80,
+            "height": 100,
             "position": "relative",
-            "width": 96,
+            "width": 150,
           }
         }
       >
@@ -192,19 +195,22 @@ exports[`renders TimePicker 1`] = `
           style={
             [
               {
+                "marginHorizontal": "auto",
                 "textAlign": "center",
                 "textAlignVertical": "center",
-                "width": 96,
               },
               {
                 "backgroundColor": "rgba(231, 224, 236, 1)",
                 "borderColor": undefined,
-                "borderRadius": 8,
+                "borderRadius": 12,
                 "borderWidth": 0,
                 "color": "rgba(28, 27, 31, 1)",
                 "fontFamily": "System",
-                "fontSize": 57,
-                "height": 72,
+                "fontSize": 48,
+                "marginTop": 5,
+                "paddingBottom": 12,
+                "paddingTop": 6,
+                "width": 116,
               },
             ]
           }

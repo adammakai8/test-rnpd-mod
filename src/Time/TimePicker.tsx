@@ -135,7 +135,7 @@ function TimePicker({
 
 const styles = StyleSheet.create({
   clockContainer: {
-    paddingTop: 36,
+    paddingTop: 14,
     paddingLeft: 12,
     paddingRight: 12,
   },

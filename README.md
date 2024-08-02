@@ -1,3 +1,6 @@
+### Disclaimer
+
+This is just a test package to fork the react-native-paper-dates only for experimental purposes
 
 <img align="left" width="56" height="56" src="https://user-images.githubusercontent.com/6492229/98982291-70b42480-251f-11eb-8d67-4b0b1b6e917b.png"> react-native-paper-dates
 ---
@@ -38,7 +41,7 @@ Check out the official docs: [web-ridge.github.io/react-native-paper-dates](http
 
 ## Maintainers
 
-[RichardLindhout](https://twitter.com/RichardLindhout) from [web_ridge](https://twitter.com/web_ridge)   
+[RichardLindhout](https://twitter.com/RichardLindhout) from [web_ridge](https://twitter.com/web_ridge)
 [Brandon Fitzwater](https://github.com/iM-GeeKy)
 
 

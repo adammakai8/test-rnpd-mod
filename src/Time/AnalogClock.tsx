@@ -46,7 +46,7 @@ function AnalogClock({
     focused?: undefined | PossibleClockTypes
   }) => any
 }) {
-  const shortPointer = hours >= 12 && is24Hour
+  const shortPointer = (hours === 0 || hours > 12) && is24Hour
 
   const theme = useTheme()
 
@@ -86,15 +86,15 @@ function AnalogClock({
           pickedHours += 12
         }
         if ((modeRef.current === 'AM' || hours24) && pickedHours === 12) {
-          pickedHours = 0
+          pickedHours = 12
         }
 
         if (!hours24 && modeRef.current === 'AM' && pickedHours === 12) {
-          pickedHours = 0
+          pickedHours = 12
         }
 
         if (pickedHours === 24) {
-          pickedHours = 12
+          pickedHours = 0
         }
 
         if (hoursRef.current !== pickedHours || final) {
@@ -161,11 +161,6 @@ function AnalogClock({
               {
                 translateX:
                   circleSize / 4 -
-                  (focused === clockTypes.hours &&
-                  pointerNumber >= 0 &&
-                  pointerNumber < 13
-                    ? 0
-                    : 4) +
                   (focused === clockTypes.minutes ? 4 : 0) -
                   dynamicSize / 2,
               },

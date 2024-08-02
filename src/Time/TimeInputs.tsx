@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
   },
   hoursAndMinutesSeparator: {
     fontSize: 65,
-    width: 24,
+    width: 0,
     alignItems: 'center',
   },
   inputContainer: {

@@ -10,7 +10,6 @@ import {
 
 import {
   Button,
-  IconButton,
   MD2Theme,
   overlay,
   useTheme,
@@ -19,11 +18,9 @@ import {
 import TimePicker from './TimePicker'
 import {
   clockTypes,
-  getTimeInputTypeIcon,
   inputTypes,
   PossibleClockTypes,
   PossibleInputTypes,
-  reverseInputTypes,
 } from './timeUtils'
 import React, { memo, useCallback, useEffect, useState } from 'react'
 import { sharedStyles } from '../shared/styles'
@@ -41,8 +38,6 @@ export function TimePickerModal({
   confirmLabel = 'Ok',
   animationType = 'none',
   locale,
-  keyboardIcon = 'keyboard-outline',
-  clockIcon = 'clock-outline',
   use24HourClock,
   inputFontSize,
   defaultInputType,
@@ -66,7 +61,7 @@ export function TimePickerModal({
 }) {
   const theme = useTheme()
 
-  const [inputType, setInputType] = useState<PossibleInputTypes>(
+  const [inputType] = useState<PossibleInputTypes>(
     defaultInputType || inputTypes.picker
   )
   const [focused, setFocused] = useState<PossibleClockTypes>(clockTypes.hours)
@@ -135,7 +130,7 @@ export function TimePickerModal({
       supportedOrientations={supportedOrientations}
       statusBarTranslucent={true}
     >
-      <>
+      <View style={{flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
         <TouchableWithoutFeedback onPress={onDismiss}>
           <View
             style={[
@@ -160,63 +155,54 @@ export function TimePickerModal({
                 },
               ]}
             >
-              <View style={styles.labelContainer}>
-                <Text
-                  maxFontSizeMultiplier={1.5}
-                  style={[
-                    styles.label,
-                    {
-                      ...textFont,
-                      color: theme?.isV3
-                        ? theme.colors.onSurfaceVariant
-                        : (theme as any as MD2Theme).colors.text,
-                    },
-                  ]}
-                >
-                  {uppercase ? labelText.toUpperCase() : labelText}
-                </Text>
-              </View>
-              <View style={styles.timePickerContainer}>
-                <TimePicker
-                  locale={locale}
-                  inputType={inputType}
-                  use24HourClock={use24HourClock}
-                  inputFontSize={inputFontSize}
-                  focused={focused}
-                  hours={localHours}
-                  minutes={localMinutes}
-                  onChange={onChange}
-                  onFocusInput={onFocusInput}
-                />
-              </View>
-              <View style={styles.bottom}>
-                <IconButton
-                  icon={getTimeInputTypeIcon(inputType, {
-                    keyboard: keyboardIcon,
-                    picker: clockIcon,
-                  })}
-                  onPress={() => setInputType(reverseInputTypes[inputType])}
-                  size={24}
-                  style={styles.inputTypeToggle}
-                  accessibilityLabel="toggle keyboard"
-                />
-                <View style={sharedStyles.root} />
-                <Button onPress={onDismiss} uppercase={uppercase}>
-                  {cancelLabel}
-                </Button>
-                <Button
-                  onPress={() =>
-                    onConfirm({ hours: localHours, minutes: localMinutes })
-                  }
-                  uppercase={uppercase}
-                >
-                  {confirmLabel}
-                </Button>
+              <View style={styles.modalContentWrapper}>
+                {label && <View style={styles.labelContainer}>
+                  <Text
+                    maxFontSizeMultiplier={1.5}
+                    style={[
+                      styles.label,
+                      {
+                        ...textFont,
+                        color: theme?.isV3
+                          ? theme.colors.onSurfaceVariant
+                          : (theme as any as MD2Theme).colors.text,
+                      },
+                    ]}
+                  >
+                    {uppercase ? labelText.toUpperCase() : labelText}
+                  </Text>
+                </View>}
+                <View style={styles.timePickerContainer}>
+                  <TimePicker
+                    locale={locale}
+                    inputType={inputType}
+                    use24HourClock={use24HourClock}
+                    inputFontSize={inputFontSize}
+                    focused={focused}
+                    hours={localHours}
+                    minutes={localMinutes}
+                    onChange={onChange}
+                    onFocusInput={onFocusInput}
+                  />
+                </View>
+                <View style={styles.bottom}>
+                  <Button onPress={onDismiss} uppercase={uppercase}>
+                    {cancelLabel}
+                  </Button>
+                  <Button
+                    onPress={() =>
+                      onConfirm({ hours: localHours, minutes: localMinutes })
+                    }
+                    uppercase={uppercase}
+                  >
+                    {confirmLabel}
+                  </Button>
+                </View>
               </View>
             </Animated.View>
           </KeyboardAvoidingView>
         </View>
-      </>
+      </View>
     </Modal>
   )
 }
@@ -234,7 +220,7 @@ function getHours(hours: number | undefined | null): number {
 const styles = StyleSheet.create({
   bottom: {
     flexDirection: 'row',
-    alignItems: 'center',
+    marginStart: 10,
     padding: 8,
   },
   center: {
@@ -269,10 +255,13 @@ const styles = StyleSheet.create({
   },
   timePickerContainer: {
     paddingLeft: 24,
-    paddingTop: 20,
+    paddingTop: 8,
     paddingBottom: 16,
     paddingRight: 24,
   },
+  modalContentWrapper: {
+    width: 312
+  }
 })
 
 export default memo(TimePickerModal)

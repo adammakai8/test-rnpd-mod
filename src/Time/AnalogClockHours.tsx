@@ -36,14 +36,14 @@ function AnalogClockHours({
               style={
                 (!is24Hour && i + 1 === hours) ||
                 (hours === i + 1 && hours !== 12) ||
-                (i + 1 === 12 && hours === 0)
+                (i + 1 === 12 && hours === 12)
                   ? { color }
                   : null
               }
               variant="bodyLarge"
               selectable={false}
             >
-              {is24Hour && i + 1 === 12 ? '00' : i + 1}
+              {i + 1}
             </Text>
           </View>
         </View>
@@ -66,13 +66,13 @@ function AnalogClockHours({
                   maxFontSizeMultiplier={1.5}
                   selectable={false}
                   style={[
-                    i + 13 === hours || (i + 13 === 24 && hours === 12)
+                    i + 13 === hours || (i + 13 === 24 && (hours === 24 || hours === 0))
                       ? { color }
                       : null,
                   ]}
                   variant="bodyLarge"
                 >
-                  {i + 13 === 24 ? '12' : i + 13}
+                  {i + 13}
                 </Text>
               </View>
             </View>
@@ -107,7 +107,7 @@ function getHourNumbers(
 ) {
   let angle = 0
   let step = (2 * Math.PI) / count
-  let radius = size / (is24Hour ? 4 : 2.5)
+  let radius = size / (is24Hour ? 3.5 : 2.5)
 
   angle = (-90 * Math.PI) / 180 + Math.PI / 6
 

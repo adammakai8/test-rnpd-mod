@@ -1,5 +1,5 @@
 {
-  "name": "react-native-paper-dates",
+  "name": "test-rnpd-mod",
   "version": "0.22.19",
   "description": "Performant Date Picker for React Native Paper",
   "main": "lib/commonjs/index",
@@ -39,13 +39,9 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/web-ridge/react-native-paper-dates",
-  "author": "Richard Lindhout <info@webridge.nl> (https://github.com/web-ridge)",
+  "repository": "https://github.com/adammakai8/test-rnpd-mod",
+  "author": "Adam Makai",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/web-ridge/react-native-paper-dates/issues"
-  },
-  "homepage": "https://github.com/web-ridge/react-native-paper-dates#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
