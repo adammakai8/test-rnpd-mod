@@ -119,17 +119,17 @@ export function getHours(
 
   let hour = parseInt((((handAngle - _90) % _360) / _30).toFixed(), 10)
   if (hour < 0) hour += 12
-  if (hour >= 12) hour -= 12
+  if (hour > 12) hour -= 12
 
   if (hourType === hourTypes.am) {
     if (hour <= 0) {
       hour += 12
-    } else if (hour >= 12) {
+    } else if (hour > 12) {
       hour -= 12
     }
   }
   if (hourType === hourTypes.pm) {
-    if (hour <= 0) {
+    if (hour < 0) {
       hour += 12
     } else if (hour > 12) {
       hour -= 12

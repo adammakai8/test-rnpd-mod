@@ -25,6 +25,7 @@ import {
 import React, { memo, useCallback, useEffect, useState } from 'react'
 import { sharedStyles } from '../shared/styles'
 import { supportedOrientations } from '../shared/utils'
+import { IconSource } from 'react-native-paper/lib/typescript/components/Icon'
 
 export function TimePickerModal({
   visible,
@@ -36,6 +37,8 @@ export function TimePickerModal({
   uppercase: _uppercase,
   cancelLabel = 'Cancel',
   confirmLabel = 'Ok',
+  confirmIcon,
+  cancelIcon,
   animationType = 'none',
   locale,
   use24HourClock,
@@ -47,6 +50,8 @@ export function TimePickerModal({
   uppercase?: boolean
   cancelLabel?: string
   confirmLabel?: string
+  confirmIcon?: IconSource,
+  cancelIcon?: IconSource,
   hours?: number | undefined
   minutes?: number | undefined
   visible: boolean | undefined
@@ -186,7 +191,7 @@ export function TimePickerModal({
                   />
                 </View>
                 <View style={styles.bottom}>
-                  <Button onPress={onDismiss} uppercase={uppercase}>
+                  <Button onPress={onDismiss} uppercase={uppercase} icon={cancelIcon}>
                     {cancelLabel}
                   </Button>
                   <Button
@@ -194,6 +199,7 @@ export function TimePickerModal({
                       onConfirm({ hours: localHours, minutes: localMinutes })
                     }
                     uppercase={uppercase}
+                    icon={confirmIcon}
                   >
                     {confirmLabel}
                   </Button>
