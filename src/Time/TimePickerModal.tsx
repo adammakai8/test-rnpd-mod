@@ -44,6 +44,7 @@ export function TimePickerModal({
   use24HourClock,
   inputFontSize,
   defaultInputType,
+  showRipple,
 }: {
   locale?: undefined | string
   label?: string
@@ -63,6 +64,7 @@ export function TimePickerModal({
   use24HourClock?: boolean
   inputFontSize?: number
   defaultInputType?: PossibleInputTypes
+  showRipple?: boolean
 }) {
   const theme = useTheme()
 
@@ -188,6 +190,7 @@ export function TimePickerModal({
                     minutes={localMinutes}
                     onChange={onChange}
                     onFocusInput={onFocusInput}
+                    showRipple={showRipple}
                   />
                 </View>
                 <View style={styles.bottom}>

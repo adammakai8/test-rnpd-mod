@@ -1,6 +1,6 @@
 {
   "name": "test-rnpd-mod",
-  "version": "0.22.19.v3",
+  "version": "0.22.19.v4",
   "description": "Performant Date Picker for React Native Paper",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

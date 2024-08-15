@@ -32,6 +32,7 @@ function TimeInputs({
   is24Hour,
   inputFontSize,
   locale,
+  showRipple,
 }: {
   inputType: PossibleInputTypes
   focused: PossibleClockTypes
@@ -46,6 +47,7 @@ function TimeInputs({
   is24Hour: boolean
   inputFontSize?: number
   locale?: string
+  showRipple?: boolean
 }) {
   const theme = useTheme()
 
@@ -111,6 +113,7 @@ function TimeInputs({
               minutes,
             })
           }}
+          showRipple={showRipple}
         />
         {inputType === 'keyboard' ? (
           <Text maxFontSizeMultiplier={1.5} variant="bodySmall">
@@ -176,6 +179,7 @@ function TimeInputs({
               minutes: newMinutes,
             })
           }}
+          showRipple={showRipple}
         />
         {inputType === 'keyboard' ? (
           <Text maxFontSizeMultiplier={1.5} variant="bodySmall">

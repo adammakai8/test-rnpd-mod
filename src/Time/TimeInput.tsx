@@ -4,6 +4,7 @@ import {
   TextInputProps,
   StyleSheet,
   Platform,
+  Pressable,
 } from 'react-native'
 import { useTheme, TouchableRipple, MD2Theme } from 'react-native-paper'
 
@@ -27,6 +28,7 @@ interface TimeInputProps
   onChanged: (n: number) => any
   inputType: PossibleInputTypes
   inputFontSize?: number
+  showRipple?: boolean
 }
 
 function TimeInput(
@@ -38,6 +40,7 @@ function TimeInput(
     onChanged,
     inputType,
     inputFontSize = 48,
+    showRipple = true,
     ...rest
   }: TimeInputProps,
   ref: any
@@ -61,6 +64,8 @@ function TimeInput(
       onChanged(Number(text))
     }
   }
+
+  const ConditionalRipple = showRipple ? TouchableRipple : Pressable
 
   let formattedValue = controlledValue
   if (!inputFocused) {
@@ -93,7 +98,7 @@ function TimeInput(
             paddingTop: 6,
             paddingBottom: 12,
             marginTop: 5,
-            width: 116
+            width: 116,
           },
         ]}
         maxFontSizeMultiplier={1.5}
@@ -107,7 +112,7 @@ function TimeInput(
         {...rest}
       />
       {onPress && inputType === inputTypes.picker ? (
-        <TouchableRipple
+        <ConditionalRipple
           style={[
             StyleSheet.absoluteFill,
             sharedStyles.overflowHidden,
@@ -124,7 +129,7 @@ function TimeInput(
           borderless={true}
         >
           <View />
-        </TouchableRipple>
+        </ConditionalRipple>
       ) : null}
     </View>
   )
@@ -134,7 +139,7 @@ const styles = StyleSheet.create({
   input: {
     textAlign: 'center',
     textAlignVertical: 'center',
-    marginHorizontal: 'auto'
+    marginHorizontal: 'auto',
   },
   root: {
     height: 100,

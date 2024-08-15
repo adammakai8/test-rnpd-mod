@@ -34,6 +34,7 @@ function TimePicker({
   locale,
   use24HourClock,
   inputFontSize,
+  showRipple,
 }: {
   locale?: undefined | string
   inputType: PossibleInputTypes
@@ -44,6 +45,7 @@ function TimePicker({
   onChange: onChangeFunc
   use24HourClock?: boolean
   inputFontSize?: number
+  showRipple?: boolean
 }) {
   const dimensions = useWindowDimensions()
   const isLandscape = dimensions.width > dimensions.height
@@ -116,6 +118,7 @@ function TimePicker({
           onFocusInput={onFocusInput}
           focused={focused}
           locale={locale}
+          showRipple={showRipple}
         />
         {inputType === inputTypes.picker ? (
           <View style={styles.clockContainer}>
