@@ -159,10 +159,7 @@ function AnalogClock({
             transform: [
               { rotate: -90 + pointerNumber * degreesPerNumber + 'deg' },
               {
-                translateX:
-                  circleSize / 4 -
-                  (focused === clockTypes.minutes ? 4 : 0) -
-                  dynamicSize / 2,
+                translateX: circleSize / 4 - dynamicSize / 2,
               },
             ],
             width: circleSize / 2 - 4 - dynamicSize,
